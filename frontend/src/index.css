@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-aviation-bg: #080D18;
+  --color-aviation-secondary: #101827;
+  --color-aviation-panel: #151F30;
+  --color-aviation-panel-hover: #1B293F;
+  --color-aviation-border: #1F2E47;
+  --color-aviation-border-light: #2D3F5E;
+  --color-aviation-primary: #35B6F6;
+  --color-aviation-secondary-accent: #36D6B0;
+  --color-aviation-warning: #F5B942;
+  --color-aviation-critical: #F05B67;
+  --color-aviation-text: #E8EEF8;
+  --color-aviation-muted: #91A0B8;
+}
+
+:root {
+  --bg-primary: #080D18;
+  --bg-secondary: #101827;
+  --bg-panel: #151F30;
+  --bg-panel-hover: #1B293F;
+  --border-color: #1F2E47;
+  --border-light: #2D3F5E;
+  --accent-primary: #35B6F6;
+  --accent-secondary: #36D6B0;
+  --status-warning: #F5B942;
+  --status-critical: #F05B67;
+  --text-primary: #E8EEF8;
+  --text-muted: #91A0B8;
+}
+
+/* Custom scrollbars for command-centre aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080D18;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F2E47;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #35B6F6;
+}
+
+/* Radar pulse animation */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+.animate-radar-pulse {
+  animation: radar-pulse 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Glow effects */
+.glow-primary {
+  box-shadow: 0 0 15px rgba(53, 182, 246, 0.25);
+}
+
+.glow-critical {
+  box-shadow: 0 0 15px rgba(240, 91, 103, 0.35);
+}
+
+.glow-warning {
+  box-shadow: 0 0 15px rgba(245, 185, 66, 0.3);
+}
+
+.glow-success {
+  box-shadow: 0 0 15px rgba(54, 214, 176, 0.25);
+}
+
+/* Grid background texture */
+.bg-aviation-grid {
+  background-image: linear-gradient(to right, rgba(31, 46, 71, 0.15) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(31, 46, 71, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
